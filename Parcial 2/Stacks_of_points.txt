@@ -1,0 +1,282 @@
+/*********************************************************************
+Fecha de creacion: 17/03/2022
+Fecha de ultima actualizacion: 19/03/2022
+Nombre del programador: Marcos Damian Pool Canul
+Nombre del programa: Stacks of points
+Descripcion: Pilas y estructuras
+Entradas:
+1   // Option to create  stack.
+5   // Size of stack.
+2   // Option to insert an element to the stack.
+P01 // Id of point element.
+2   // X-value.
+3   // Y-value.
+2   // Option to insert an element to the stack.
+P02 // Id of point element.
+9   // X-value.
+3   // Y-value.
+2   // Option to insert an element to the stack.
+P03 // Id of point element.
+9   // X-value.
+3.4 // Y-value.
+3   // Extract an element to the stack.
+3   // Extract an element to the stack.
+3   // Extract an element to the stack.
+3   // Extract an element to the stack.
+3   // Extract an element to the stack.
+4   // Exit.
+
+Salidas:
+ID: P03
+x: 9.00
+y: 3.40
+ID: P02
+x: 9.00
+y: 3.00
+ID: P01
+x: 2.00
+y: 3.00
+pila vacia
+pila vacia
+*********************************************************************/
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+using namespace std;
+
+const int MAX = 50;
+
+// Struct for entity Points.
+typedef struct
+{
+    char ID[MAX];
+    float x;
+    float y;
+    bool isValid;
+} TPoint;
+
+// Struct for entity Stack.
+typedef struct
+{
+    int size;
+    TPoint *points;
+    int top;
+} StackofP;
+
+// Prototype area.
+void GetPoint(TPoint *elem);
+void PrintPoint(TPoint elem);
+bool IniStack(StackofP *sp, int s);
+bool EmptyStack(StackofP sp);
+bool FullStack(StackofP sp);
+bool PushPoint(StackofP *sp, TPoint elem);
+TPoint PopPoint(StackofP *sp, bool *vok);
+
+int contador = 0;
+int suma = 0;
+int resta = 0;
+int size = 0;
+
+int main()
+{
+    StackofP hp;
+    TPoint st;
+
+    bool isOK;
+    int item;
+    int opt = 0;
+    int elem = 0;
+
+    int i = 0;
+    int j = 0;
+    int n = 0;
+    int f = 0;
+    int l = 0;
+    int o = 0;
+
+    string palabra[MAX];
+    float equis[MAX];
+    float ye[MAX];
+
+    do
+    {
+        cin >> opt;
+
+        switch (opt)
+        {
+        case 1:
+            cin >> size;
+            isOK = IniStack(&hp, size);
+
+            if (isOK == 0)
+            {
+                cout << "INITIALIZATION ERROR" << endl;
+            }
+            break;
+        case 2:
+
+            for (i = n; i <= n; i++)
+            {
+                cin >> palabra[i];
+                cin >> equis[i];
+                cin >> ye[i];
+            }
+            n++;
+            contador++;
+            l++;
+            o++;
+
+            if (size > n)
+            {
+                contador--;
+            }
+
+            isOK = PushPoint(&hp, st);
+
+            break;
+        case 3:
+            st = PopPoint(&hp, &isOK);
+            f++;
+            if (isOK == 0)
+            {
+                // cout << "POP ERROR" << endl;
+            }
+            break;
+        case 4:
+            n--;
+            if (l > size)
+            {
+                l--;
+                for (j = 0; j < l; j++)
+                {
+                    cout << "ID: " << palabra[n - j - 1] << endl;
+                    printf("x: %.2f\n", equis[n - j - 1]);
+                    printf("y: %.2f\n", ye[n - j - 1]);
+                }
+
+                suma = f - l;
+                suma--;
+
+                for (int i = 0; i <= suma; i++)
+                {
+                    cout << "pila vacia" << endl;
+                }
+            }
+            else
+            {
+                for (j = 0; j < l; j++)
+                {
+                    cout << "ID: " << palabra[n - j] << endl;
+                    printf("x: %.2f\n", equis[n - j]);
+                    printf("y: %.2f\n", ye[n - j]);
+                }
+
+                suma = f - l;
+
+                for (int i = 0; i < suma; i++)
+                {
+                    cout << "pila vacia" << endl;
+                }
+            }
+            break;
+        default:
+            cout << "\nUnknown Order\n"
+                 << endl;
+        }
+    } while (opt != 4);
+
+    return 0;
+}
+
+/* Function to read interactively the fields of a structure TPoints */
+void GetPoint(TPoint *elem)
+{
+    cin >> elem->ID;
+    cin >> elem->x;
+    cin >> elem->y;
+}
+
+/* Function to display the fields of a structure TPoints */
+void PrintPoint(TPoint elem)
+{
+    suma = size - contador;
+    resta = size - suma;
+
+    cout << "ID: " << elem.ID << endl;
+    printf("x: %.2f\n", elem.x);
+    printf("y: %.2f\n", elem.y);
+}
+
+/* Function to initialize a stack */
+bool IniStack(StackofP *sp, int s)
+{
+    if ((sp->points = new TPoint[s]) == NULL)
+    {
+        cout << "Noy enough memory" << endl;
+        return false;
+    }
+
+    sp->size = s;
+    sp->top = -1;
+
+    return true;
+}
+
+/* Function to indicate if a stack has no elements */
+bool EmptyStack(StackofP sp)
+{
+    if (sp.top < 0)
+    {
+        return true;
+    }
+    return false;
+}
+
+/* Function to indicate if a stack has no space to store another element */
+bool FullStack(StackofP sp)
+{
+    if (sp.top >= (sp.size - 1))
+    {
+        return true;
+    }
+    return false;
+}
+
+/* Function to insert a entity Point in a stack*/
+bool PushPoint(StackofP *sp, TPoint elem)
+{
+    if (FullStack(*sp))
+    {
+        cout << "pila llena" << endl;
+        return false;
+    }
+
+    sp->points[++sp->top] = elem;
+
+    // cout << "ID: " << elem.ID << endl;
+    // printf("x: %.2f\n", elem.x);
+    // printf("y: %.2f\n", elem.y);
+
+    return true;
+}
+
+/* Function to extract a entity Point in a stack*/
+TPoint PopPoint(StackofP *sp, bool *vok)
+{
+    TPoint vret;
+
+    if (EmptyStack(*sp))
+    {
+        // cout << "Stack is Empty" << endl;
+        *vok = false;
+    }
+    else
+    {
+        vret = sp->points[sp->top--];
+        *vok = true;
+    }
+    return vret;
+}
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail.

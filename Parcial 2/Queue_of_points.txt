@@ -1,0 +1,436 @@
+/*********************************************************************
+Fecha de creacion: 24/03/2022
+Fecha de ultima actualizacion: 26/03/2022
+Nombre del programador: Marcos Damian Pool Canul
+Nombre del programa: Queue of points
+Descripcion: Colas y estructuras
+Entradas:
+1   // Option to create  queue.
+5   // Size of queue.
+2   // Option to insert an element to the queue.
+P01 // Id of point element.
+2   // X-value.
+3   // Y-value.
+2   // Option to insert an element to the queue.
+P02 // Id of point element.
+9   // X-value.
+3   // Y-value.
+2   // Option to insert an element to the queue.
+P03 // Id of point element.
+9   // X-value.
+3.4 // Y-value.
+3   // Extract an element to the queue.
+3   // Extract an element to the queue.
+3   // Extract an element to the queue.
+3   // Extract an element to the queue.
+3   // Extract an element to the queue.
+4   // Exit.
+
+Salidas:
+ID: P01
+X: 2.000
+Y: 3.000
+ID: P02
+X: 9.000
+Y: 3.000
+ID: P03
+X: 9.000
+Y: 3.400
+E
+E
+*********************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+const int MAX = 100;
+
+struct QueueI
+{
+    int *arri;
+    int sizeq;
+    int last;
+    int front;
+};
+
+struct TPoint
+{
+    char ID[MAX];
+    float x;
+    float y;
+    bool isValid;
+};
+
+// Prototype area.
+
+void Show_QueueI(QueueI q);
+bool Init_QueueI(QueueI *q, int s);
+bool isQueueIEmpy(QueueI q);
+bool isQueueIFull(QueueI q);
+bool InQueueI(QueueI *q, int elem);
+int DeQueueI(QueueI *q, bool *flag);
+
+int contador = 0;
+int suma = 0;
+int resta = 0;
+int size = 0;
+
+int main()
+{
+    QueueI *arri = NULL;
+    QueueI arry;
+
+    bool isOK;
+    int item;
+    int opt = 0;
+    int elem = 0;
+
+    int i = 0;
+    int j = 0;
+    int n = 0;
+    int f = 0;
+    int l = 0;
+    int o = 0;
+
+    string palabra[MAX];
+    float equis[MAX];
+    float ye[MAX];
+
+    do
+    {
+        cin >> opt;
+
+        switch (opt)
+        {
+        case 1:
+            cin >> size;
+            isOK = Init_QueueI(&arry, size);
+
+            if (isOK == 0)
+            {
+                cout << "1 ERROR" << endl;
+            }
+            break;
+        case 2:
+
+            for (i = n; i <= n; i++)
+            {
+                cin >> palabra[i];
+                cin >> equis[i];
+                cin >> ye[i];
+            }
+            n++;
+            contador++;
+            l++;
+            o++;
+
+            if (n > size)
+            {
+                contador--;
+                cout << "F" << endl;
+            }
+
+            isOK = InQueueI(&arry, 9);
+
+            break;
+        case 3:
+            elem = DeQueueI(&arry, &isOK);
+
+            f++;
+            if (isOK == 0)
+            {
+                // cout << "POP ERROR" << endl;
+            }
+            break;
+        case 4:
+            n--;
+            if (l > size)
+            {
+                for (j = 0; j < l - 1; j++)
+                {
+                    cout << "ID: " << palabra[j] << endl;
+                    printf("X: %.3f\n", equis[j]);
+                    printf("Y: %.3f\n", ye[j]);
+                }
+
+                suma = f - l;
+
+                for (int i = 0; i <= suma; i++)
+                {
+                    cout << "E" << endl;
+                }
+            }
+            else
+            {
+                for (j = 0; j < l; j++)
+                {
+                    cout << "ID: " << palabra[j] << endl;
+                    printf("X: %.3f\n", equis[j]);
+                    printf("Y: %.3f\n", ye[j]);
+                }
+
+                suma = f - l;
+
+                for (int i = 0; i < suma; i++)
+                {
+                    cout << "E" << endl;
+                }
+            }
+            break;
+        default:
+            cout << "\nUnknown Order\n"
+                 << endl;
+        }
+    } while (opt != 4);
+
+    return 0;
+}
+
+void Show_QueueI(QueueI q)
+{
+    cout << endl;
+    cout << "Address of first element on Stack: " << q.arri << endl;
+    cout << "Size of Stack: " << q.sizeq << endl;
+    cout << "Last position: " << q.last << endl;
+    cout << "Front position: " << q.front << endl;
+    cout << endl;
+}
+
+bool Init_QueueI(QueueI *q, int s)
+{
+    q->sizeq = s;
+    q->last = -1;
+    q->front = -1;
+
+    if ((q->arri = new int[s]) == NULL)
+    {
+        cout << "Not enough memory" << endl;
+        return false;
+    }
+    return true;
+}
+
+bool isQueueIEmpy(QueueI q)
+{
+    if (q.last < 0 || q.front < 0)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool isQueueIFull(QueueI q)
+{
+    if ((q.last + 1) % q.sizeq == q.front)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool InQueueI(QueueI *q, int elem)
+{
+    if (isQueueIFull(*(q)))
+    {
+        cout << "F";
+        return false;
+    }
+
+    if (isQueueIEmpy(*(q)))
+    {
+        q->last = 0;
+        q->arri[q->last] = elem;
+        return true;
+    }
+    q->last = ((q->last + 1) % q->sizeq);
+    q->arri[++q->last] = elem;
+    cout << "Intro: " << q->arri[q->last] << endl;
+    return true;
+}
+
+int DeQueueI(QueueI *q, bool *flag)
+{
+    int vret = 0;
+    if (isQueueIEmpy(*(q)))
+    {
+        *(flag) = false;
+    }
+    else
+    {
+
+        *(flag) = true;
+        vret = q->arri[0];
+
+        for (int i = 0; i < q->last; i++)
+        {
+            q->arri[i] = q->arri[i + 1];
+            q->last--;
+        }
+    }
+    return vret;
+}
+
+---------------------------------------------------------------------------
+
+
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+
+// Queue struct to storage variables
+struct QueueI
+{
+    string ID;
+    float x;
+    float y;
+
+    bool isValid = true;
+};
+
+// Struct to manage queue properties
+struct ListQueueI
+{
+    int size;
+    int first;
+    int last;
+    QueueI *qarr;
+};
+
+// Clear queue
+void ClearQueueI(ListQueueI *q, int sz)
+{
+    q->qarr = new QueueI[sz];
+    q->size = sz;
+    q->first = -1;
+    q->last = -1;
+}
+
+// Creates Keiki Haniyasushin, only that
+QueueI CreateKeiki_Haniyasushin(string ID, float x, float y, bool isValid)
+{
+    QueueI elem;
+    elem.ID = ID;
+    elem.x = x;
+    elem.y = y;
+    elem.isValid = isValid;
+
+    return elem;
+}
+
+// Let the user input data in one queue space
+void scanQueueI(QueueI *elem)
+{
+    cout << "ID: ";
+    cin >> elem->ID;
+    cout << "x: ";
+    cin >> elem->x;
+    cout << "y: ";
+    cin >> elem->y;
+}
+
+// Prints the data when one element is pushed
+void printQueueI(QueueI elem)
+{
+    cout << "ID: " << elem.ID << endl;
+    printf("x: %.3f\n", elem.x);
+    printf("y: %.3f\n", elem.y);
+}
+
+// Returns value if queue is full
+bool isQueueFull(ListQueueI q)
+{
+    return (q.last + 1) % (q.size) == q.first;
+}
+
+// Pushes an element in queue if meets conditions
+bool PushQueueI(ListQueueI *q, QueueI elem)
+{
+    if (isQueueFull(*(q)))
+    {
+        cout << "F" << endl;
+        return false;
+    }
+
+    // Handle first item
+    q->first = q->last == -1 ? 0 : q->first;
+    q->last = ++q->last % q->size;
+    q->qarr[q->last] = elem;
+    printQueueI(elem);
+    return true;
+}
+
+// Returns value is queue is empty
+bool isQueueEmpty(ListQueueI q)
+{
+    return q.last == -1;
+}
+
+// Pops an element in queue if meets conditions
+QueueI PopQueueI(ListQueueI *q)
+{
+    QueueI elem;
+
+    if (isQueueEmpty(*(q)))
+    {
+        cout << "E" << endl;
+        return CreateKeiki_Haniyasushin("NONE", 0, 0, false);
+    }
+    elem = q->qarr[q->first];
+
+    // Handle last item
+    if (q->first == q->last)
+    {
+        q->first = -1;
+        q->last = -1;
+    }
+    else
+    {
+        q->first = ++q->first % q->size;
+    }
+
+    return elem;
+}
+
+int main()
+{
+    QueueI qu_qu, qu_exit;
+    ListQueueI qu_list;
+    int opt, size;
+    bool isOK, qu_stat;
+    do
+    {
+        cout << "Number: ";
+        cin >> opt;
+
+        switch (opt)
+        {
+        case 1: // Init queue
+            cout << "Input queue size: ";
+            cin >> size;
+            ClearQueueI(&qu_list, size);
+            break;
+        case 2: // Push queue
+            cout << "Push queue." << endl;
+            scanQueueI(&qu_qu); // Aqui era el error, lo tenias despues
+            isOK = PushQueueI(&qu_list, qu_qu);
+
+            break;
+        case 3: // Pop queue
+            cout << "Pop queue." << endl;
+            if (isQueueEmpty(qu_list))
+            {
+            }
+            else
+            {
+                qu_exit = PopQueueI(&qu_list);
+                printQueueI(qu_exit);
+            }
+            break;
+        default: // Exit/Not valid number
+            break;
+        }
+    } while (opt != 4);
+
+    return 0;
+}
