@@ -37,9 +37,3 @@ Este repositorio contiene información y recursos relacionados con la asignatura
   3. Estructuras de datos para tratamiento de la información
      - Extracción de información de la WEB (Web Scrapping)
      - Formatos para almacenamiento de información de la WEB
-
-| Unidad                                  | Temas                                                                                       |
-|-----------------------------------------|---------------------------------------------------------------------------------------------|
-| UNIDAD I: ESTRUCTURAS DE DATOS DINÁMICAS | 1. Apuntadores y manejo dinámico de memoria <br> 2. Listas enlazadas <br> 3. Pilas <br> 4. Colas <br> 5. Montículos <br> 6. Tablas Hash |
-| UNIDAD II: ESTRUCTURAS DE DATOS AVANZADAS| 1. Características y propiedades de los árboles <br> 2. Árboles de búsqueda <br> 3. Estructuras de datos para grafos planos <br> - Aristas doblemente ligadas (DCEL) <br> - Localización de puntos |
-| UNIDAD III: CONTENEDORES                | 1. Conjuntos y multi-conjuntos <br> 2. Mapas y multi-mapas <br> 3. Estructuras de datos para tratamiento de la información <br> - Extracción de información de la WEB (Web Scrapping) <br> - Formatos para almacenamiento de información de la WEB |
