@@ -2,21 +2,6 @@
 
 Este repositorio contiene información y recursos relacionados con la asignatura "Diseño de Patrones para Datos Estructurados" impartida en el Departamento de Ingeniería en Datos e Inteligencia Organizacional.
 
-## Detalles de la Asignatura
-
-- **Nombre de la asignatura:** Diseño de Patrones para Datos Estructurados
-- **Departamento o Licenciatura:** Ingeniería en Datos e Inteligencia Organizacional
-- **Ciclo:** 1
-- **Clave:** ID0101
-- **Créditos:** 6
-- **Área de formación curricular:** Profesional Asociado y Licenciatura Básica
-- **Tipo de asignatura:** Taller
-- **Horas de estudio:**
-  - HT: 16
-  - HP: 32
-  - TH: 48
-  - HI: 48
-
 ## Objetivos de la Asignatura
 
 - **Objetivo Cognitivo:** Describir las principales estrategias de diseño de patrones y datos estructurados para el análisis de grandes volúmenes de información.
@@ -52,7 +37,3 @@ Este repositorio contiene información y recursos relacionados con la asignatura
   3. Estructuras de datos para tratamiento de la información
      a) Extracción de información de la WEB (Web Scrapping)
      b) Formatos para almacenamiento de información de la WEB
-
----
-
-*Este README.md proporciona una visión general de la asignatura "Diseño de Patrones para Datos Estructurados" y sus unidades correspondientes. Para obtener más detalles, consulte los materiales y recursos proporcionados en este repositorio.*
