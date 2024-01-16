@@ -1,4 +1,4 @@
-# ID0101 - Diseño de Patrones para Datos Estructurados
+# Diseño de Patrones para Datos Estructurados - ID0101
 
 Este repositorio contiene información y recursos relacionados con la asignatura "Diseño de Patrones para Datos Estructurados" impartida en el Departamento de Ingeniería en Datos e Inteligencia Organizacional.
 
