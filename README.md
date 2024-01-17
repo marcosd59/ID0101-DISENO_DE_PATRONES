@@ -37,3 +37,7 @@ Este repositorio contiene información y recursos relacionados con la asignatura
   3. Estructuras de datos para tratamiento de la información
      - Extracción de información de la WEB (Web Scrapping)
      - Formatos para almacenamiento de información de la WEB
+
+   ```bash
+   git clone https://github.com/marcosd59/ID0101-DISENO_DE_PATRONES.git
+   ```
