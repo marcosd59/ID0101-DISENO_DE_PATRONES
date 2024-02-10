@@ -2,12 +2,6 @@
 
 Este repositorio contiene información y recursos relacionados con la asignatura "Diseño de Patrones para Datos Estructurados" impartida en el Departamento de Ingeniería en Datos e Inteligencia Organizacional.
 
-## Objetivos de la Asignatura
-
-- **Objetivo Cognitivo:** Describir las principales estrategias de diseño de patrones y datos estructurados para el análisis de grandes volúmenes de información.
-- **Objetivo Procedimental:** Emplear técnicas de diseño de patrones y datos estructurados para el análisis de grandes volúmenes de información.
-- **Objetivo Actitudinal:** Fomentar la disciplina para el análisis y diseño de soluciones a problemas de diseño de patrones y datos estructurados para grandes volúmenes de información.
-
 ## Unidades y Temas
 
 ### UNIDAD I: ESTRUCTURAS DE DATOS DINÁMICAS
@@ -37,7 +31,3 @@ Este repositorio contiene información y recursos relacionados con la asignatura
   3. Estructuras de datos para tratamiento de la información
      - Extracción de información de la WEB (Web Scrapping)
      - Formatos para almacenamiento de información de la WEB
-
-   ```bash
-   git clone https://github.com/marcosd59/ID0101-DISENO_DE_PATRONES.git
-   ```
