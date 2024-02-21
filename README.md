@@ -1,95 +1,29 @@
 # Diseño de Patrones para Datos Estructurados - ID0101
 
-Este repositorio contiene información y recursos relacionados con la asignatura "Diseño de Patrones para Datos Estructurados".
+## Descripción General
+El repositorio es una colección integral de programas y ejemplos de código que cubren una amplia gama de temas en programación y estructuras de datos. Este repositorio está estructurado en tres partes principales, cada una correspondiente a un parcial diferente, abarcando desde fundamentos básicos hasta conceptos avanzados en C++ y C.
 
-## Contenido del Parcial 1
+## Contenido
 
-### 1. Apuntadores.cpp
-   - **Descripción**: Explica y demuestra el uso de apuntadores en C++, incluyendo la obtención de la longitud de una cadena mediante un apuntador.
-   - **Conceptos Clave**: Apuntadores, cadenas, manejo de memoria.
+### Parcial 1
+El primer parcial se enfoca en los fundamentos de la programación y estructuras de datos básicas. Los temas incluyen:
 
-### 2. Cadenas_longitud_y_inverso.cpp
-   - **Descripción**: Programa en C++ que calcula la longitud de una cadena y la invierte.
-   - **Conceptos Clave**: Manejo de cadenas, apuntadores.
+- **Manejo de Apuntadores y Cadenas**: Explora el uso de apuntadores y la manipulación de cadenas.
+- **Estructuras Básicas**: Introduce el concepto de estructuras en C++ para organizar datos relacionados.
+- **Algoritmos Básicos**: Incluye ejemplos como determinación de números primos y coprimos, y aproximación de Taylor.
+- **Memoria Dinámica**: Cubre la gestión y uso de memoria dinámica en C++.
 
-### 3. Coprimos.cpp
-   - **Descripción**: Determina si dos números son coprimos (es decir, si su máximo común divisor es 1).
-   - **Conceptos Clave**: Algoritmo de Euclides, matemáticas.
+### Parcial 2
+El segundo parcial se adentra en estructuras de datos más complejas y algoritmos intermedios, tales como:
 
-### 4. Estructura_cellphone.cpp
-   - **Descripción**: Define y maneja una estructura `cell_phone` en C++, demostrando la creación y manipulación de estructuras.
-   - **Conceptos Clave**: Estructuras, memoria dinámica.
+- **Estructuras de Datos Lineales y No Lineales**: Incluye listas enlazadas, pilas, colas, y grafos.
+- **Algoritmos de Ordenamiento y Búsqueda**: Presenta métodos clásicos como ordenamiento por burbuja, inserción, selección, y algoritmos de búsqueda.
+- **Conceptos de Hashing y Recursividad**: Introduce el hashing para almacenamiento eficiente y el uso de la recursividad en la solución de problemas.
 
-### 5. Estructura_doble.cpp
-   - **Descripción**: Trabaja con una estructura compleja `caja`, incluyendo creación, captura y listado de elementos.
-   - **Conceptos Clave**: Estructuras, manejo de memoria.
+### Parcial 3
+El tercer parcial avanza hacia temas más avanzados, enfocándose en:
 
-### 6. Estructuras.cpp
-   - **Descripción**: Demuestra el uso de estructuras para manejar datos de una casa, incluyendo dirección, costo y número de habitaciones.
-   - **Conceptos Clave**: Estructuras, arrays.
-
-### 7. Estructuras_dinamicas.cpp
-   - **Descripción**: Uso de estructuras dinámicas para almacenar y mostrar paquetes, mostrando la gestión de memoria dinámica.
-   - **Conceptos Clave**: Estructuras, memoria dinámica.
-
-### 8. Examen_practico_1.cpp
-   - **Descripción**: Modelado de un punto en un plano cartesiano, utilizando arreglos dinámicos y estructuras.
-   - **Conceptos Clave**: Estructuras, arreglos dinámicos, geometría.
-
-### 9. Examen_practico_2.cpp
-   - **Descripción**: Calcula la traza (suma de la diagonal) de una matriz dinámica.
-   - **Conceptos Clave**: Matrices, memoria dinámica, matemáticas.
-
-### 10. Matriz_dinamica.cpp
-    - **Descripción**: Creación y manipulación de una matriz dinámica en C++.
-    - **Conceptos Clave**: Matrices, memoria dinámica.
-
-### 11. Memoria_dinamica.cpp
-    - **Descripción**: Demostración del uso de memoria dinámica en C++ para crear y manipular arrays.
-    - **Conceptos Clave**: Memoria dinámica, arrays.
-
-### 12. Substrings.c
-    - **Descripción**: Programa en C que encuentra la posición de una subcadena dentro de una cadena principal.
-    - **Conceptos Clave**: Cadenas, búsqueda.
-
-### 13. aproximacion_de_taylor.cpp
-    - **Descripción**: Calcula la aproximación de Taylor para la función e^x.
-    - **Conceptos Clave**: Series de Taylor, matemáticas.
-
-### 14. coprimes_in_array.cpp
-    - **Descripción**: Determina si un conjunto de números son coprimos.
-    - **Conceptos Clave**: Matemáticas, teoría de números.
-
-### 15. numeros_primos.cpp
-    - **Descripción**: Verifica si un número es primo.
-    - **Conceptos Clave**: Números primos, algoritmos.
-
-## Unidades y Temas
-
-### UNIDAD I: ESTRUCTURAS DE DATOS DINÁMICAS
-
-- Describir las principales estructuras dinámicas de datos lineales para su uso en el diseño de programas.
-  1. Apuntadores y manejo dinámico de memoria
-  2. Listas enlazadas
-  3. Pilas
-  4. Colas
-  5. Montículos
-  6. Tablas Hash
-
-### UNIDAD II: ESTRUCTURAS DE DATOS AVANZADAS
-
-- Describir las estructuras de datos avanzadas para su uso en el diseño de programas.
-  1. Características y propiedades de los árboles
-  2. Árboles de búsqueda
-  3. Estructuras de datos para grafos planos
-     - Aristas doblemente ligadas (DCEL)
-     - Localización de puntos
-
-### UNIDAD III: CONTENEDORES
-
-- Aplicar el concepto de contenedores para la solución de problemas computacionales.
-  1. Conjuntos y multi-conjuntos
-  2. Mapas y multi-mapas
-  3. Estructuras de datos para tratamiento de la información
-     - Extracción de información de la WEB (Web Scrapping)
-     - Formatos para almacenamiento de información de la WEB
+- **Algoritmos de Grafos**: Explora algoritmos complejos como Dijkstra, Kruskal, Prim y Floyd-Warshall.
+- **Manipulación Avanzada de Cadenas**: Profundiza en técnicas avanzadas de manipulación de cadenas.
+- **Algoritmos de Ordenamiento Avanzados**: Incluye QuickSort y MergeSort.
+- **Programación Dinámica y Estructuras Avanzadas**: Aborda técnicas de programación dinámica y estructuras de datos más sofisticadas.
